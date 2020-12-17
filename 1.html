@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<input type="date" id="myDate">
+
+<p>Click the button to get the date of the date field.</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<p><strong>Note:</strong> input elements with type="date" do not show as any date field/calendar in Firefox.</p>
+
+<p id="demo"></p>
+<p id="work"></p>
+
+<script>
+function myFunction() {
+    var x = document.getElementById("myDate").value;
+    var asdf = x.split('-');
+    var y = parseInt(asdf[0]);
+    var m = parseInt(asdf[1]);
+    var d = parseInt(asdf[2]);
+    var md;
+    var work;
+    
+    if (y%4 == 0) {
+        if (m == 1) {
+            md = d;
+        }
+        else if (m == 2) {
+            md = 31 + d;
+        }
+        else if (m == 3) {
+            md = 31 + 29 + d;
+        }
+        else if (m == 4) {
+            md = 31 * 2 + 29 + d;
+        }
+        else if (m == 5) {
+            md = 31 * 2 + 29 + 30 + d;
+        }
+        else if (m == 6) {
+            md = 31 * 3 + 29 + 30 + d;
+        }
+        else if (m == 7) {
+            md = 31 * 3 + 29 + 30 * 2 + d;
+        }
+        else if (m == 8) {
+            md = 31 * 4 + 29 + 30 * 2 + d;
+        }
+        else if (m == 9) {
+            md = 31 * 5 + 29 + 30 * 2 + d;
+        }
+        else if (m == 10) {
+            md = 31 * 5 + 29 + 30 * 3 + d;
+        }
+        else if (m == 11) {
+            md = 31 * 6 + 29 + 30 * 3 + d;
+        }
+        else if (m == 12) {
+            md = 31 * 6 + 29 + 30 * 4 + d;
+        }
+    }
+    else
+    {
+        if (m == 1) {
+            md = d;
+        }
+        else if (m == 2) {
+            md = 31 + d;
+        }
+        else if (m == 3) {
+            md = 31 + 28 + d;
+        }
+        else if (m == 4) {
+            md = 31 * 2 + 28 + d;
+        }
+        else if (m == 5) {
+            md = 31 * 2 + 28 + 30 + d;
+        }
+        else if (m == 6) {
+            md = 31 * 3 + 28 + 30 + d;
+        }
+        else if (m == 7) {
+            md = 31 * 3 + 28 + 30 * 2 + d;
+        }
+        else if (m == 8) {
+            md = 31 * 4 + 28 + 30 * 2 + d;
+        }
+        else if (m == 9) {
+            md = 31 * 5 + 28 + 30 * 2 + d;
+        }
+        else if (m == 10) {
+            md = 31 * 5 + 28 + 30 * 3 + d;
+        }
+        else if (m == 11) {
+            md = 31 * 6 + 28 + 30 * 3 + d;
+        }
+        else if (m == 12) {
+            md = 31 * 6 + 28 + 30 * 4 + d;
+        }
+    } 
+
+    if (md%4 == 0) {
+        work = "주간";
+    }
+    else if (md%4 == 1) {
+        work = "야간"
+    }
+    else if (md%4 == 2) {
+        work = "조간"
+    }
+    else if (md%4 == 3) {
+        work = "휴간"
+    }
+    document.getElementById("demo").innerHTML = md;
+    document.getElementById("work").innerHTML = work + "입니다";
+}
+</script>
+
+</body>
+</html>

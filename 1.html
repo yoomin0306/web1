@@ -4,13 +4,11 @@
 
 <input type="date" id="myDate">
 
-<p>Click the button to get the date of the date field.</p>
+<p>날짜를 입력하고 버튼을 누르세요.</p>
 
-<button onclick="myFunction()">Try it</button>
+<button onclick="myFunction()">제출</button>
 
-<p><strong>Note:</strong> input elements with type="date" do not show as any date field/calendar in Firefox.</p>
 
-<p id="demo"></p>
 <p id="work"></p>
 
 <script>
@@ -99,24 +97,70 @@ function myFunction() {
         else if (m == 12) {
             md = 31 * 6 + 28 + 30 * 4 + d;
         }
-    } 
+        
+    }
+    
+    if (y % 4 == 0) {
+        if (md%4 == 0) {
+            work = "'주간'";
+        }
+        else if (md%4 == 1) {
+            work = "'야간'"
+        }
+        else if (md%4 == 2) {
+            work = "'조간'"
+        }
+        else if (md%4 == 3) {
+            work = "'휴간'"
+        }
+    }
 
-    if (md%4 == 0) {
-        work = "주간";
+    if (y % 4 == 1) {
+        if (md%4 == 0) {
+            work = "'조간'";
+        }
+        else if (md%4 == 1) {
+            work = "'휴간'"
+        }
+        else if (md%4 == 2) {
+            work = "'주간'"
+        }
+        else if (md%4 == 3) {
+            work = "'야간'"
+        }
     }
-    else if (md%4 == 1) {
-        work = "야간"
+
+    if (y % 4 == 2) {
+        if (md%4 == 0) {
+            work = "'휴간'";
+        }
+        else if (md%4 == 1) {
+            work = "'주간'"
+        }
+        else if (md%4 == 2) {
+            work = "'야간'"
+        }
+        else if (md%4 == 3) {
+            work = "'조간'"
+        }
     }
-    else if (md%4 == 2) {
-        work = "조간"
+
+    if (y % 4 == 3) {
+        if (md%4 == 0) {
+            work = "'주간'";
+        }
+        else if (md%4 == 1) {
+            work = "'야간'"
+        }
+        else if (md%4 == 2) {
+            work = "'조간'"
+        }
+        else if (md%4 == 3) {
+            work = "'휴간'"
+        }
     }
-    else if (md%4 == 3) {
-        work = "휴간"
-    }
-    document.getElementById("demo").innerHTML = md;
     document.getElementById("work").innerHTML = work + "입니다";
 }
 </script>
-
 </body>
 </html>
